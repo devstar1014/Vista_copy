@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92 80" width="92" height="80">
+	<title>link-bg-svg</title>
+	<style>
+		.s0 { fill: #d0eadc } 
+	</style>
+	<path id="Layer" class="s0" d="m20.9 50.7c0-16.5 13.4-30 30-30h40.3v59h-70.3z"/>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m71.2 50v-29.3c11 0 20-8.9 20-20v49.3z"/>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m50.2 59.7h-29.3c0 11.1-8.9 20-20 20h49.3z"/>
+</svg>

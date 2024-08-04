@@ -1,0 +1,30 @@
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.thumbnail-slider .slick-slide:focus img,
+.thumbnail-slider .slick-slide.slick-current img {
+  border: 2px solid #007bff; /* Change border color for active thumbnail */
+}

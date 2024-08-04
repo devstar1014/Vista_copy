@@ -1,0 +1,165 @@
+ .offcanvas-end.open{
+    transform: translateX(0px) !important;
+    right: 0px !important;
+}
+ .offcanvas-end{
+     position: fixed !important;
+  top: 0;
+  right: -300px !important; /* Start off-canvas */
+  width: 350px !important;
+  height: 100%;
+  background-color: #000000fc !important;
+  transition: transform 0.3s ease-in-out !important ;
+  transform: translateX(100%); /* Start off-screen */
+    z-index: 1400 !important;
+  visibility: visible !important;
+}
+.btn-close{
+    outline: none;
+    --bs-btn-close-focus-shadow:none;
+}
+.btn-close:focus{
+    outline: none !important;
+       --bs-btn-close-focus-shadow:none;
+}
+ .offcanvas-end .offcanvas_logo img{
+    width: 150px;
+}
+ .offcanvas-end .offcanvas-header{
+  padding: 50px 30px 20px;
+  border-bottom: 1px solid #FFFFFF36;
+ }
+  .offcanvas-end .offcanvas-body{
+    padding: 50px 30px;
+  }
+   .offcanvas-end .offcanvas_list{
+    padding-left: 0px;
+  }
+ .offcanvas-end  .offcanvas_list li{
+    padding: 20px 10px;
+    border-bottom: 1px solid #FFFFFF36;
+  }
+  .offcanvas-end  .offcanvas_list li .offcanvas_link{
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    position: relative;
+    text-decoration: none
+}
+  .offcanvas-end  .offcanvas_list li .offcanvas_link::after{
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    background: url(../../../assets//images//white-arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    height: 10px;
+}
+  .offcanvas-end  .offcanvas_list li .offcanvas_link:hover{
+       background: linear-gradient(267.52deg, #ad186a 4.04%, #157b7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.offcanvas_footer{
+  position: absolute; 
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  padding: 25px;
+    border-top: 1px solid #FFFFFF36;
+}
+.social_icon ul{
+    display:flex ;
+    justify-content: start;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+.social_icon ul li {
+   margin-left: 18px;
+}
+.social_icon ul li a{
+    font-size: 16px;
+    color: #fff;
+}
+
+
+ .offcanvas-start.open{
+    transform: translateX(0px) !important;
+    left: 0px !important;
+}
+ .offcanvas-start{
+     position: fixed !important;
+  top: 0;
+  left: -300px !important; /* Start off-canvas */
+  width: 350px !important;
+  height: 100%;
+  background-color: #000000fc !important;
+  transition: transform 0.3s ease-in-out !important ;
+  transform: translateX(100%); /* Start off-screen */
+    z-index: 1400 !important;
+  visibility: visible !important;
+}
+
+.submenu {
+  display: none;
+  padding-top: 10px;
+  padding-left: 10px;
+  transition: 0.6s all;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.submenu.open {
+  display: block;
+  max-height: 100%;
+}
+.toggle-button{
+  float: right;
+  color: #fff;
+}
+.offcanvas-start .offcanvas_logo img{
+    width: 150px;
+}
+.offcanvas-start .offcanvas-header{
+  padding: 50px 30px 20px;
+  border-bottom: 1px solid #FFFFFF36;
+ }
+ .offcanvas-start .offcanvas-body{
+    padding: 50px 20px;
+  }
+   .offcanvas-start .offcanvas_list{
+    padding-left: 0px;
+  }
+ .offcanvas-start  .offcanvas_list li{
+    padding: 20px 10px;
+    border-bottom: 1px solid #FFFFFF36;
+  }
+  .offcanvas-start  .offcanvas_list li .offcanvas_link{
+    font-weight: 600;
+    color: #fff;
+    font-size: 14px;
+    position: relative;
+    text-decoration: none
+}
+  .offcanvas-start  .offcanvas_list li .offcanvas_link::after{
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    background: url(../../../assets//images//white-arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 10px;
+    height: 10px;
+}
+  .offcanvas-start  .offcanvas_list li .offcanvas_link:hover{
+       background: linear-gradient(267.52deg, #ad186a 4.04%, #157b7d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
