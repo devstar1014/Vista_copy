@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SearchComponent = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
@@ -10,12 +10,15 @@ const SearchComponent = () => {
       return;
     }
 
-    const elements = document.body.getElementsByTagName('*');
+    const elements = document.body.getElementsByTagName("*");
     const results = [];
 
     for (let i = 0; i < elements.length; i++) {
       const element = elements[i];
-      if (element.childNodes.length === 1 && element.childNodes[0].nodeType === Node.TEXT_NODE) {
+      if (
+        element.childNodes.length === 1 &&
+        element.childNodes[0].nodeType === Node.TEXT_NODE
+      ) {
         const text = element.textContent;
         if (text.toLowerCase().includes(searchTerm.toLowerCase())) {
           if (!element.id) {
@@ -38,7 +41,7 @@ const SearchComponent = () => {
         placeholder="Search..."
       />
       <button onClick={handleSearch}>Search</button>
-      
+
       <ul>
         {searchResults.map((result, index) => (
           <li key={index}>
@@ -55,7 +58,9 @@ const SearchComponent = () => {
 const ContentArea = () => {
   return (
     <div>
-      <p>This is a sample paragraph about apples. Apples are delicious fruits.</p>
+      <p>
+        This is a sample paragraph about apples. Apples are delicious fruits.
+      </p>
       <p>Bananas are yellow and curved. They are rich in potassium.</p>
       <p>Grapes come in different colors like green, red, and purple.</p>
       <p>Pineapples have a distinctive appearance and tropical flavor.</p>

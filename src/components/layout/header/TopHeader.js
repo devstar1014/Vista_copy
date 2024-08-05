@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./header.css";
 import "./search.css";
 import "../../../assets/css/style.css";
@@ -15,52 +15,79 @@ import norwayFlag from "../../../assets/images/norway_flag.svg";
 import "../../../assets/searchIndex.json";
 
 export const TopHeader = () => {
+  // modify by naoki --start for search word in current page
   const [searchWord, setSearchWord] = useState("");
-  const [innermostElement, setInnermostElement] = useState([]);
 
   const [elements, setElements] = useState([]);
+  const [searchPop, setSearchPop] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const inputRef = useRef(null);
+  const containerRef = useRef(null);
+  const handleClickOutside = (event) => {
+    if (event.target.id === "searchButton") {
+      return;
+    }
+    if (containerRef.current && !containerRef.current.contains(event.target)) {
+      setSearchPop(false);
+      setSearchWord("");
+    }
+  };
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    let id = 0;
+    await setSearchWord(e.target.value);
+
+    if (!e.target.value.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    // const elements = document.body.getElementsByTagName("*");
+    const results = [];
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      if (
+        element.childNodes.length === 1 &&
+        element.childNodes[0].nodeType === Node.TEXT_NODE
+      ) {
+        const text = element.textContent;
+        if (text.toLowerCase().includes(e.target.value.toLowerCase())) {
+          let href = "";
+          if (!element.id) {
+            element.id = `search-result-${i}`;
+          }
+          href = `#${element.id}`;
+          if (element.href && element.href !== "#") {
+            let hrefs = [];
+            hrefs = element.href.split("/");
+
+            href = `/${hrefs[hrefs.length - 1]}`;
+          }
+          // console.log("hrefe:==>", href);
+          results.push({
+            href: href,
+            text: text.trim(),
+          });
+        }
+      }
+    }
+    setSearchResults(results);
+  };
+  // modify by naoki --end for search word in current page
 
   useEffect(() => {
     const elements = document.body.getElementsByTagName("*");
     setElements([...elements]);
   }, []);
-  // modify by naoki --start for search word in current page
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    let id = 0;
-    setSearchWord(e.target.value);
-    if (e.target.value) {
-      const searchText = e.target.value.toLowerCase();
-      let searchElement = [];
-      await elements.filter(async (element) => {
-        let text = element.innerHTML + "";
-        text = text.toLowerCase();
-        if (
-          text.includes(searchText) &&
-          element.children.length === 0 &&
-          element.style.display !== "none"
-        ) {
-          if (element.hasAttribute("id"))
-            searchElement.push({
-              element: element,
-              id: element.getAttribute("id").toString(),
-            });
-          else {
-            id++;
-            element.setAttribute("id", id);
-            searchElement.push({ element: element, id: id });
-          }
-        }
-        return await text.includes(searchText);
-      });
-      await setInnermostElement([...searchElement]);
-    } else {
-      setInnermostElement([]);
-    }
-  };
-  // modify by naoki --end for search word in current page
 
-  const [searchPop, setSearchPop] = useState(false);
+  useEffect(() => {
+    // Bind the event listener to the document
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      // Clean up the event listener on component unmount
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="top_header">
@@ -68,43 +95,51 @@ export const TopHeader = () => {
         <ul className="top_header_list">
           <li className="search_icon relation">
             {/* // modify by naoki --start for search word in current page */}
+            {searchPop && (
+              <div ref={containerRef}>
+                <input
+                  id="search"
+                  ref={inputRef}
+                  type="text"
+                  value={searchWord}
+                  placeholder="Search.."
+                  name="search"
+                  className={"custom-search"}
+                  onChange={handleSearch}
+                />
 
-            <div className="bg-white">
-              <input
-                type="text"
-                value={searchWord}
-                placeholder="Search.."
-                name="search"
-                className="custom-search"
-                onChange={handleSearch}
-              />
-              <i
-                class="fa fa-search px-2"
-                style={{ color: "#ff0000", outline: "none", border: "none" }}
-              ></i>
-            </div>
-            <div className="dropdown-search">
-              {innermostElement.length > 0 ? (
-                <div className="dropdown-content">
-                  {innermostElement.map((item, index) => (
-                    <a
-                      href={`#${item.id}`}
-                      key={index}
-                      className="d-block line-clamp"
-                    >
-                      {console.log("item :>> ", item.element)}
-                      {item.element.innerHTML}
-                    </a>
-                  ))}
+                <div className="dropdown-search">
+                  {searchResults.length > 0 ? (
+                    <ul className="dropdown-content">
+                      {searchResults.map((item, index) => (
+                        <li key={index}>
+                          {/* {console.log("item ==> ", item)} */}
+                          <a href={item.href} className="d-block line-clamp">
+                            {/* {console.log("item :>> ", item.text)} */}
+                            {item.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    ""
+                  )}
+                  {/* // modify by naoki --end for search word in current page */}
                 </div>
-              ) : (
-                ""
-              )}
-              {/* <a href="#" onClick={handleSearchClick}>
-              <i class="bi bi-search"></i>
-            </a> */}
-              {/* // modify by naoki --end for search word in current page */}
-            </div>
+              </div>
+            )}
+            <button
+              style={{ color: "white" }}
+              id="searchButton"
+              onClick={(e) => {
+                setSearchPop((prev) => {
+                  console.log("preprev", prev);
+                  return !prev;
+                });
+              }}
+            >
+              <i className="bi bi-search" style={{ color: "white" }}></i>
+            </button>
           </li>
           <li className="language_list dropdown">
             <a

@@ -6,7 +6,6 @@
   left: 0px;
   background-color: #eee;
   max-width: 300px;
-
 }
 
 .dropdown-content {
@@ -41,18 +40,22 @@
 
 .custom-search {
   background-color: white;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  min-width: 300px;
   outline: none;
   border: none;
+  animation-name: search;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 
-@media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .custom-search {
-    min-width: 200px;
+@keyframes search {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 300px;
   }
 }
+
 .relation {
   position: relative;
   display: flex;
@@ -60,6 +63,7 @@
 
 .line-clamp {
   overflow: hidden;
+  line-clamp: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;

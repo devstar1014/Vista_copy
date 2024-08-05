@@ -65,7 +65,7 @@ export const Header = () => {
   const closeOffcanvas = () => {
     setIsOffcanvasOpen(false);
   };
-
+  
   const isActive = (path) => {
     return location.pathname === path;
   };
