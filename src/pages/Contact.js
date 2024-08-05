@@ -84,11 +84,11 @@ export const Contact = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetch("https://webbitech.co.in/PHP-BETA/vista/api/get-countries")
-  //     .then((response) => response.json())
-  //     .then((json) => setCountryValue(json));
-  // }, []);
+  useEffect(() => {
+    fetch("https://webbitech.co.in/PHP-BETA/vista/api/get-countries")
+      .then((response) => response.json())
+      .then((json) => setCountryValue(json));
+  }, []);
 
   return (
     <div>

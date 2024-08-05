@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+// import "owl.carousel/dist/assets/owl.carousel.css";
+// import "owl.carousel/dist/assets/owl.theme.default.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Header } from "../components/layout/header/Header";
 import { Footer } from "../components/layout/footer/Footer";
@@ -141,9 +141,10 @@ export const Careers = () => {
           </div>
         </div>
         <div className="slider_bottom">
-          {/* <OwlCarousel
+          <OwlCarousel
             className="owl-carousel career_carousel owl-theme"
-            {...options}> */}
+            {...options}
+          >
             <div class="item">
               <div className="img_box">
                 <img src={careerImg1} alt="" />
@@ -169,7 +170,7 @@ export const Careers = () => {
                 <img src={careerImg5} alt="" />
               </div>
             </div>
-          {/* </OwlCarousel> */}
+          </OwlCarousel>
         </div>
       </section>
 
@@ -183,7 +184,8 @@ export const Careers = () => {
                   class={toggle === 1 ? "nav-link active" : "nav-link"}
                   onClick={() => {
                     toggleTab(1);
-                  }}>
+                  }}
+                >
                   Interview Process
                 </a>
               </li>
@@ -193,7 +195,8 @@ export const Careers = () => {
                   class={toggle === 2 ? "nav-link active" : "nav-link"}
                   onClick={() => {
                     toggleTab(2);
-                  }}>
+                  }}
+                >
                   Assessment and Testing
                 </a>
               </li>
@@ -203,7 +206,8 @@ export const Careers = () => {
                   class={toggle === 3 ? "nav-link active" : "nav-link"}
                   onClick={() => {
                     toggleTab(3);
-                  }}>
+                  }}
+                >
                   Reference and Background Checks
                 </a>
               </li>
@@ -213,7 +217,8 @@ export const Careers = () => {
                   class={toggle === 4 ? "nav-link active" : "nav-link"}
                   onClick={() => {
                     toggleTab(4);
-                  }}>
+                  }}
+                >
                   Decision and Offer
                 </a>
               </li>
@@ -223,7 +228,8 @@ export const Careers = () => {
                   class={toggle === 5 ? "nav-link active" : "nav-link"}
                   onClick={() => {
                     toggleTab(5);
-                  }}>
+                  }}
+                >
                   Onboarding
                 </a>
               </li>
@@ -237,7 +243,8 @@ export const Careers = () => {
                 <div
                   className={
                     toggle === 1 ? "tab_content active" : "tab_content"
-                  }>
+                  }
+                >
                   <div className="row gy-4 align-items-center">
                     <div className="col-lg-4 col-md-6">
                       <div className="content_box">
@@ -282,7 +289,8 @@ export const Careers = () => {
                 <div
                   className={
                     toggle === 2 ? "tab_content active" : "tab_content"
-                  }>
+                  }
+                >
                   <div className="row gy-4 align-items-center">
                     <div className="col-lg-4 col-md-6">
                       <div className="content_box">
@@ -326,7 +334,8 @@ export const Careers = () => {
                 <div
                   className={
                     toggle === 3 ? "tab_content active" : "tab_content"
-                  }>
+                  }
+                >
                   <div className="row gy-4 justify-content-center align-items-center">
                     <div className="col-lg-4 col-md-6">
                       <div className="content_box">
@@ -359,7 +368,8 @@ export const Careers = () => {
                 <div
                   className={
                     toggle === 4 ? "tab_content active" : "tab_content"
-                  }>
+                  }
+                >
                   <div className="row gy-4 align-items-center">
                     <div className="col-lg-4 col-md-6">
                       <div className="content_box">
@@ -402,7 +412,8 @@ export const Careers = () => {
                 <div
                   className={
                     toggle === 5 ? "tab_content active" : "tab_content"
-                  }>
+                  }
+                >
                   <div className="row gy-4 justify-content-center align-items-center">
                     <div className="col-lg-4 col-md-6">
                       <div className="content_box">
@@ -550,7 +561,8 @@ export const Careers = () => {
                         <p className="text-end mb-0">
                           <button
                             onClick={toggleModal}
-                            className="btn table_btn">
+                            className="btn table_btn"
+                          >
                             <span>Apply Now</span>
                           </button>
                         </p>
