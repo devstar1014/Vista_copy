@@ -101,7 +101,8 @@ export const Footer = () => {
                       exact
                       to="/About"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       About
                     </Link>
                   </li>
@@ -110,7 +111,8 @@ export const Footer = () => {
                       exact
                       to="/Careers"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Careers
                     </Link>
                   </li>
@@ -119,7 +121,8 @@ export const Footer = () => {
                       exact
                       to="/News"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       News
                     </Link>
                   </li>
@@ -128,7 +131,8 @@ export const Footer = () => {
                       exact
                       to="/"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Testimonial
                     </Link>
                   </li>
@@ -137,7 +141,8 @@ export const Footer = () => {
                       exact
                       to="/"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Blog
                     </Link>
                   </li>
@@ -146,7 +151,8 @@ export const Footer = () => {
                       exact
                       to="/Contact"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Contact Us
                     </Link>
                   </li>
@@ -160,7 +166,8 @@ export const Footer = () => {
                     <Link
                       to="/DigitalEngineeringServiceList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Digital Engineering
                     </Link>
                   </li>
@@ -168,7 +175,8 @@ export const Footer = () => {
                     <Link
                       to="/AIDataServicesList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       AI Data Services
                     </Link>
                   </li>
@@ -176,7 +184,8 @@ export const Footer = () => {
                     <Link
                       to="/AIMLComputerVisionList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       AI/ML & Computer Vision
                     </Link>
                   </li>
@@ -185,7 +194,8 @@ export const Footer = () => {
                     <Link
                       to="/ElectronicsEmbededList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Electronics & Embedded Design
                     </Link>
                   </li>
@@ -193,7 +203,8 @@ export const Footer = () => {
                     <Link
                       to="/CloudServiceList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       Cloud Services
                     </Link>
                   </li>
@@ -201,7 +212,8 @@ export const Footer = () => {
                     <Link
                       to="/SapServiceList"
                       className="footer_link"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      onClick={() => window.scrollTo(0, 0)}
+                    >
                       SAP Services
                     </Link>
                   </li>
@@ -216,7 +228,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section1")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Aerospace And Defense
                     </a>
                   </li>
@@ -226,7 +239,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section2")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Automotive
                     </a>
                   </li>
@@ -237,7 +251,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section4")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Semiconductor
                     </a>
                   </li>
@@ -247,7 +262,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section5")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Medical Devices & Healthcare
                     </a>
                   </li>
@@ -257,7 +273,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section6")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Oil & Gas
                     </a>
                   </li>
@@ -267,7 +284,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section7")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Paper & Pulp
                     </a>
                   </li>
@@ -277,7 +295,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section9")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Industrial and Heavy Equipment
                     </a>
                   </li>
@@ -287,7 +306,8 @@ export const Footer = () => {
                       onClick={() =>
                         handleMegaMenuClick("/Industry", "section3")
                       }
-                      className="footer_link">
+                      className="footer_link"
+                    >
                       Rail Transportation
                     </a>
                   </li>
@@ -357,9 +377,9 @@ export const Footer = () => {
                   </li>
                   <li className="ps-2">
                     <a href="#" className="mail_link">
-                      info@vistaes.com
+                      mercurys1030@gmail.com
                       <br />
-                      career@vistaes.com
+                      ru.evil.ca3233@gmail.com
                     </a>
                   </li>
                   <li>

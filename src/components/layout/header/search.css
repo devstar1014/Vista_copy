@@ -56,6 +56,25 @@
   }
 }
 
+@media (max-width: 576px) {
+  .custom-search {
+    background-color: white;
+    outline: none;
+    border: none;
+    animation-name: search;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  @keyframes search {
+    from {
+      width: 0px;
+    }
+    to {
+      width: 150px;
+    }
+  }
+}
+
 .relation {
   position: relative;
   display: flex;
